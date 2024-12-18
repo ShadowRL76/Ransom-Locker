@@ -1,7 +1,3 @@
-Thanks for the clarification! Here's an updated version of the README that includes your specific choices of **GPL-3.0 license**, **wxWidgets** for the GUI, and **hand-rolled encryption**:
-
----
-
 # **RansomLocker**
 
 ## **Overview**

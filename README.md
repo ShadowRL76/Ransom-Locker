@@ -1,5 +1,16 @@
 # **RansomLocker**
 
+
+In Progress
+This project is still a work in progress. Some features are being developed or refined. Here's what's currently in progress:
+
+Encryption Algorithms: Additional encryption algorithms will be added for more variety and security options.
+Decryption Improvements: Refining the decryption process for better usability and security.
+File Management: Features for better file management (e.g., backup and restore options) are under development.
+Error Handling and Security: Enhancing the robustness of the app with better error handling and security measures.
+Cross-Platform Compatibility: Ensuring full compatibility with Windows and Linux, as well as potential macOS support.
+---
+
 ## **Overview**
 
 **RansomLocker** is a C++ application that simulates file encryption with multiple encryption algorithms. The application features an intuitive **wxWidgets-based GUI** and allows users to encrypt and decrypt files with a variety of custom encryption methods, providing a controlled and educational experience of how ransomware works.

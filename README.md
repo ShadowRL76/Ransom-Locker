@@ -22,6 +22,7 @@ This project is a work in progress. Currently, the following features have been 
 -Error Handling: Adding error handling for better user experience.
 
 -Cross-Platform Support: Expanding the app to support other platforms beyond Windows.
+
 ---
 
 ## **Overview**

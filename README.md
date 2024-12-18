@@ -12,6 +12,7 @@ This project is a work in progress. Currently, the following features have been 
 -File Picker: File picker functionality for selecting files to be encrypted.
 
 -Progress Bar: Progress bar to show the status of operations (like encryption or decryption).
+
 ---
 # **Upcoming Features**:
 -Encryption Algorithms: Implementation of file encryption algorithms (currently under development).

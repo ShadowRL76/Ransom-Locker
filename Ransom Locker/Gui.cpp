@@ -37,6 +37,8 @@ AppFrame::AppFrame() :
     progressBar(new wxGauge(this, wxID_ANY, 100, wxPoint(165, 150), wxSize(400, 25), wxGA_HORIZONTAL, wxDefaultValidator, "Progress"))
 
 {
+    buttons = { button1, button2, button3, button4 }; 
+
 
     wxFont headerFont(wxFontInfo(14).Bold());
     wxFont headerThreeFont(wxFontInfo(10).Bold());
@@ -115,23 +117,27 @@ void AppFrame::onAbout(wxCommandEvent& event)
 
 void AppFrame::OnButtonHover(wxMouseEvent& event)
 {
-    for (auto* button : buttons)
+    wxButton* button = dynamic_cast<wxButton*>(event.GetEventObject());
+    if(button)
     {
         button->SetForegroundColour("#ED2A25");
-        button->SetBackgroundColour("#FDEDEC");
+        button->SetBackgroundColour("#FDEDEC"); 
         button->Refresh(); 
     }
+    event.Skip();
 }
 
 void AppFrame::OnButtonLeave(wxMouseEvent& event)
 {
 
-    for (auto* button : buttons) 
+    wxButton* button = dynamic_cast<wxButton*>(event.GetEventObject());
+    if (button)
     {
         button->SetForegroundColour("#FDEDEC");
-        button->SetBackgroundColour("#ED2A25");
-        button->Refresh();
-    }
+        button->SetBackgroundColour("#ED2A25"); 
+        button->Refresh(); 
+    } 
+    event.Skip();
 } 
 
 void AppFrame::OnToggle(wxCommandEvent& event)
@@ -175,6 +181,7 @@ void AppFrame::FileSelector(wxCommandEvent& event)
     case FileErrors::fileSelectedMessage:
         break;
     }
+    
 }
 
 Logger& AppFrame::GetLogger()

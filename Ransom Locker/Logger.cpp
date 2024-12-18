@@ -28,8 +28,11 @@ int Logger::OnFileOpenSuccess(const wxString& filename)
         wxLogError("The file '%s' does not exist.", filename); 
         return FileErrors(fileDoesNotExistError);
     }
+    if(wxFileExists(filename))
+	{
+        std::unique_ptr<wxString> m_file = std::make_unique<wxString>(filename); 
+        wxLogMessage("Selected file is: %s", *m_file); 
+	}
 
-    wxLogMessage("Selected file is: %s", filename);
-    const wxString m_file = filename;
     return FileErrors(fileSelectedMessage);
 }

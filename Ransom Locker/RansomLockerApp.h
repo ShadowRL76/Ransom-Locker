@@ -7,9 +7,6 @@
 #include <wx/wfstream.h>
 #include "Logger.h"
 
-
-
-
 class RansomLockerApp : public wxApp {
 public:
     bool OnInit() override;
@@ -31,7 +28,6 @@ private:
     std::vector<wxButton*> buttons = { button1, button2, button3, button4 }; 
     wxGauge* progressBar;
     wxToggleButton* toggleThemeButton;
-    wxButton* selectFileButton;
     Logger logger;
 
 

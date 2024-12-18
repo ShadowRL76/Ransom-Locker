@@ -1,7 +1,8 @@
 # **RansomLocker**
 
 ---
-#In Progress
+#**In Progress**
+
 This project is still a work in progress. Some features are being developed or refined. Here's what's currently in progress:
 
 Encryption Algorithms: Additional encryption algorithms will be added for more variety and security options.

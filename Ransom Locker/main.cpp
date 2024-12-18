@@ -1,6 +1,6 @@
 #include "RansomLockerApp.h"
 
-IMPLEMENT_APP_NO_MAIN(RansomLockerApp)
+IMPLEMENT_APP_NO_MAIN(RansomLockerApp) 
 
 extern "C" int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, wxCmdLineArgType lpCmdLine, int nCmdShow) {
     return wxEntry(hInstance, hPrevInstance, lpCmdLine, nCmdShow);
@@ -8,13 +8,15 @@ extern "C" int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, w
 
 int main(int argc, char* argv[])
 {
-    if (!wxEntryStart(argc, argv)) {
-        return -1; // Initialization failed
-    }
+   Logger logger;
 
-    if (!wxTheApp || !wxTheApp->CallOnInit()) {
-        return -1; // Initialization failed
-    }
+   if (!wxEntryStart(argc, argv)) {
+       logger.OnGuiFailure("wxEntryStart failed");
+   }
+
+   if (!wxTheApp || !wxTheApp->CallOnInit()) {
+       logger.OnGuiFailure("CallOnInit failed");
+   }
 
     int result = wxTheApp->OnRun();
     wxTheApp->OnExit();

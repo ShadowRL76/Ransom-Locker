@@ -6,6 +6,7 @@ enum LibErrors
 {
     wxWidgetsLibError = -1, 
     GuiInitSuccess = 0 
+
 };
 
 enum FileErrors { 
@@ -18,6 +19,7 @@ class Logger
 {
 public:
     int OnGuiSuccess();
+    int OnGuiFailure(const wxString& error);
     int OnFileOpenSuccess(const wxString& filename); 
 };
 

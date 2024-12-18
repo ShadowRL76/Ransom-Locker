@@ -50,7 +50,6 @@ This project is a work in progress. Currently, the following features have been 
 - C++11 or later.
 - CMake for building the project.
 - **wxWidgets** for the GUI.
-- **OpenSSL** or other libraries (if used) for encryption support.
 
 ### Install wxWidgets (on Linux)
 
@@ -63,16 +62,6 @@ sudo apt-get install libwxgtk3.0-gtk3-dev
 ### Install wxWidgets (on Windows)
 
 Follow the instructions to install wxWidgets on Windows from the [official wxWidgets website](https://www.wxwidgets.org/downloads/).
-
-### Install OpenSSL (if using for encryption)
-
-For Ubuntu/Debian-based systems:
-
-```bash
-sudo apt-get install libssl-dev
-```
-
-On Windows, download OpenSSL from [here](https://slproweb.com/products/Win32OpenSSL.html).
 
 ## **Installation**
 
@@ -94,7 +83,7 @@ On Windows, download OpenSSL from [here](https://slproweb.com/products/Win32Open
      ```bash
      sudo apt-get install libssl-dev libwxgtk3.0-gtk3-dev
      ```
-   - On Windows, ensure wxWidgets and OpenSSL (or other libraries you’re using for encryption) are installed.
+   - On Windows, ensure wxWidgets is installed.
 
 4. **Build the project**:
 

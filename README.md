@@ -1,7 +1,7 @@
 # **RansomLocker**
 
 ---
-#**In Progress**
+# **In Progress**
 
 This project is still a work in progress. Some features are being developed or refined. Here's what's currently in progress:
 

@@ -5,16 +5,24 @@
 
 This project is still a work in progress. Some features are being developed or refined. Here's what's currently in progress:
 
-Encryption Algorithms: Additional encryption algorithms will be added for more variety and security options.
+his project is a work in progress. Currently, the following features have been implemented:
 
-Decryption Improvements: Refining the decryption process for better usability and security.
+GUI Setup: Basic graphical user interface (GUI) with functional buttons.
 
-File Management: Features for better file management (e.g., backup and restore options) are under development.
+Theme Switching: Ability to change the application's theme (light/dark mode).
 
-Error Handling and Security: Enhancing the robustness of the app with better error handling and security measures.
+File Picker: File picker functionality for selecting files to be encrypted.
 
-Cross-Platform Compatibility: Ensuring full compatibility with Windows and Linux, as well as potential macOS support.
+Progress Bar: Progress bar to show the status of operations (like encryption or decryption).
 
+Upcoming Features:
+Encryption Algorithms: Implementation of file encryption algorithms (currently under development).
+
+Decryption Process: Plans to implement decryption functionality.
+
+Error Handling: Adding error handling for better user experience.
+
+Cross-Platform Support: Expanding the app to support other platforms beyond Windows.
 ---
 
 ## **Overview**

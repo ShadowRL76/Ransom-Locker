@@ -132,7 +132,7 @@ For the **GPL-3.0 License**, include the following text in the `LICENSE` file:
 GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007
 
-Copyright (C) 2024 [Your Name or Your Organization]
+Copyright (C) 2024 ShadowRL76
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -145,8 +145,9 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
+
 ```
 
-`[ShadowRL76]` 
+
 
 ---

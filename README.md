@@ -120,13 +120,13 @@ If you'd like to contribute to the project, follow these steps:
 
 ## **License**
 
-This project is licensed under the **GPL-3.0 License**. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the **GPL-3.0 License**. See the [LICENSE.txt](LICENSE.txt) file for more details.
 
 ---
 
 ## **LICENSE**
 
-For the **GPL-3.0 License**, include the following text in the `LICENSE.txt` file:
+For the **GPL-3.0 License**, include the following text in the `LICENSE` file:
 
 ```
 GNU GENERAL PUBLIC LICENSE

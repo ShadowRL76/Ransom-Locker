@@ -1,7 +1,5 @@
 #include "Logger.h"
 
-
-
 int Logger::OnGuiSuccess()
 {
     {
@@ -35,8 +33,3 @@ int Logger::OnFileOpenSuccess(const wxString& filename)
     const wxString m_file = filename;
     return FileErrors(fileSelectedMessage);
 }
-
-
-
-
-

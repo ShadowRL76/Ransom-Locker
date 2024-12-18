@@ -44,8 +44,6 @@ This project is a work in progress. Currently, the following features have been 
 - **Simulated Ransomware Behavior**: Encrypt files, lock them, and simulate ransomware by requiring a decryption key.
 - **Cross-Platform**: Compatible with both Windows and Linux.
 - **Secure File Management**: Organize and manage encrypted files.
-Here’s the updated **Prerequisites** and **Installation** section, reflecting that you're not using OpenSSL:
-
 ---
 
 ## **Prerequisites**

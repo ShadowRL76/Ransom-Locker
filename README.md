@@ -1,7 +1,7 @@
 # **RansomLocker**
 
-
-In Progress
+---
+#In Progress
 This project is still a work in progress. Some features are being developed or refined. Here's what's currently in progress:
 
 Encryption Algorithms: Additional encryption algorithms will be added for more variety and security options.
@@ -13,6 +13,7 @@ File Management: Features for better file management (e.g., backup and restore o
 Error Handling and Security: Enhancing the robustness of the app with better error handling and security measures.
 
 Cross-Platform Compatibility: Ensuring full compatibility with Windows and Linux, as well as potential macOS support.
+
 ---
 
 ## **Overview**

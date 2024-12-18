@@ -7,6 +7,18 @@
 #include <wx/wfstream.h>
 #include "Logger.h"
 
+constexpr u_int FRAME_WIDTH = 800;
+constexpr u_int FRAME_HEIGHT = 600; 
+constexpr auto DARK_THEME_GREY = "#161616";
+constexpr auto LIGHT_THEME_WHITE = "white";
+constexpr auto LIGHT_GREEN = "#00CB7A";
+constexpr auto CREAMY_WHITE = "#FDEDEC";
+constexpr auto RED = "#ED2A25";
+constexpr auto PINKISH_RED = "#F03B4A";
+constexpr auto BOLD = "bold"; 
+
+
+
 class RansomLockerApp : public wxApp {
 public:
     bool OnInit() override;

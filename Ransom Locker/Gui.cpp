@@ -5,8 +5,8 @@
 bool RansomLockerApp::OnInit()
 { 
     AppFrame* frame = new AppFrame();
-    frame->SetSize(800, 600); 
-    frame->SetBackgroundColour("#161616");  
+    frame->SetSize(FRAME_WIDTH, FRAME_HEIGHT); 
+    frame->SetBackgroundColour(DARK_THEME_GREY);
     frame->Show(true);  
     wxIcon icon;
     icon.LoadFile("C:\\Users\\Shadow\\source\\repos\\Ransom Locker\\Images\\logo.ico", wxBITMAP_TYPE_ICO);
@@ -56,16 +56,16 @@ void AppFrame::SetupUI()
     progressBarTitle->SetForegroundColour("white");
     progressBarTitle->SetFont(headerThreeFont);  
 
-    progressBar->SetBackgroundColour("#FDEDEC");
+    progressBar->SetBackgroundColour(CREAMY_WHITE);
     progressBar->SetValue(50);
 
     for (auto* button : buttons) 
     {
-        button->SetForegroundColour("#FDEDEC"); 
-        button->SetBackgroundColour("#ED2A25"); 
+        button->SetForegroundColour(CREAMY_WHITE); 
+        button->SetBackgroundColour(RED);  
     }
 
-    toggleThemeButton->SetBackgroundColour("#00CB7A"); 
+    toggleThemeButton->SetBackgroundColour(LIGHT_GREEN);  
 
     for(auto* button : buttons)
 	{
@@ -127,8 +127,8 @@ void AppFrame::OnButtonHover(wxMouseEvent& event)
     wxButton* button = dynamic_cast<wxButton*>(event.GetEventObject());
     if(button)
     {
-        button->SetForegroundColour("#ED2A25");
-        button->SetBackgroundColour("#FDEDEC"); 
+        button->SetForegroundColour(RED); 
+        button->SetBackgroundColour(CREAMY_WHITE); 
         button->Refresh(); 
     }
     event.Skip();
@@ -140,8 +140,8 @@ void AppFrame::OnButtonLeave(wxMouseEvent& event)
     wxButton* button = dynamic_cast<wxButton*>(event.GetEventObject());
     if (button)
     {
-        button->SetForegroundColour("#FDEDEC");
-        button->SetBackgroundColour("#ED2A25"); 
+        button->SetForegroundColour(CREAMY_WHITE); 
+        button->SetBackgroundColour(RED);
         button->Refresh(); 
     } 
     event.Skip();
@@ -150,25 +150,25 @@ void AppFrame::OnButtonLeave(wxMouseEvent& event)
 void AppFrame::OnToggle(wxCommandEvent& event)
 {
 
-    wxColor darkTheme("#161616");
-    wxColor lightTheme("white");
+
+    wxColor lightTheme(LIGHT_THEME_WHITE); 
     wxColor CurrentState = GetBackgroundColour();
 
-    if (CurrentState != darkTheme) 
+    if (CurrentState != DARK_THEME_GREY)
     {
-        SetBackgroundColour(darkTheme);
-        toggleThemeButton->SetBackgroundColour("#00CB7A");
-        selectEncryptionTitle->SetForegroundColour("bold");
-        selectEncryptionTitle->SetForegroundColour("white");
-        progressBarTitle->SetForegroundColour("bold");
-        progressBarTitle->SetForegroundColour("white"); 
+        SetBackgroundColour(DARK_THEME_GREY);
+        toggleThemeButton->SetBackgroundColour(LIGHT_GREEN);
+        selectEncryptionTitle->SetForegroundColour(BOLD);
+        selectEncryptionTitle->SetForegroundColour(LIGHT_THEME_WHITE); 
+        progressBarTitle->SetForegroundColour(BOLD);
+        progressBarTitle->SetForegroundColour(LIGHT_THEME_WHITE); 
     }
     else 
     {
-        SetBackgroundColour(lightTheme);
-        toggleThemeButton->SetBackgroundColour("#F03B4A");
-        selectEncryptionTitle->SetForegroundColour("bold");
-        progressBarTitle->SetForegroundColour("bold"); 
+        SetBackgroundColour(LIGHT_THEME_WHITE); 
+        toggleThemeButton->SetBackgroundColour(PINKISH_RED);
+        selectEncryptionTitle->SetForegroundColour(BOLD); 
+        progressBarTitle->SetForegroundColour(BOLD);
     }
     Refresh(); 
 }

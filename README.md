@@ -13,7 +13,11 @@ This project is a work in progress. Currently, the following features have been 
 
 -Progress Bar: Progress bar to show the status of operations (like encryption or decryption).
 
-![RansomLocker GUI](docs/images/gui_screenshot.png)
+![RansomLocker GUI](docs/images/guiScreenshotDarkTheme.png)
+
+---
+
+![RansomLocker GUI](docs/images/guiScreenshotLightTheme.png)
 
 ---
 # **Upcoming Features**:

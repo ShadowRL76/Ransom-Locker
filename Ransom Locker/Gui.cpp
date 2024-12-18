@@ -5,8 +5,8 @@
 bool RansomLockerApp::OnInit()
 { 
     AppFrame* frame = new AppFrame();
-    frame->SetSize(FRAME_WIDTH, FRAME_HEIGHT); 
-    frame->SetBackgroundColour(DARK_THEME_GREY);
+    frame->SetSize(FRAME_WIDTH, FRAME_HEIGHT);  
+    frame->SetBackgroundColour(DARK_THEME_GREY); 
     frame->Show(true);  
     wxIcon icon;
     icon.LoadFile("C:\\Users\\Shadow\\source\\repos\\Ransom Locker\\Images\\logo.ico", wxBITMAP_TYPE_ICO);

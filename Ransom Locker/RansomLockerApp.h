@@ -17,8 +17,6 @@ constexpr auto RED = "#ED2A25";
 constexpr auto PINKISH_RED = "#F03B4A";
 constexpr auto BOLD = "bold"; 
 
-
-
 class RansomLockerApp : public wxApp {
 public:
     bool OnInit() override;
@@ -56,7 +54,5 @@ public:
     AppFrame();
     Logger& GetLogger(); 
 };
-
-
 
 #endif 

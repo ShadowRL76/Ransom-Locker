@@ -3,26 +3,24 @@
 ---
 # **In Progress**
 
-This project is still a work in progress. Some features are being developed or refined. Here's what's currently in progress:
+This project is a work in progress. Currently, the following features have been implemented:
 
-his project is a work in progress. Currently, the following features have been implemented:
+-GUI Setup: Basic graphical user interface (GUI) with functional buttons.
 
-GUI Setup: Basic graphical user interface (GUI) with functional buttons.
+-Theme Switching: Ability to change the application's theme (light/dark mode).
 
-Theme Switching: Ability to change the application's theme (light/dark mode).
+-File Picker: File picker functionality for selecting files to be encrypted.
 
-File Picker: File picker functionality for selecting files to be encrypted.
+-Progress Bar: Progress bar to show the status of operations (like encryption or decryption).
+---
+# **Upcoming Features**:
+-Encryption Algorithms: Implementation of file encryption algorithms (currently under development).
 
-Progress Bar: Progress bar to show the status of operations (like encryption or decryption).
+-Decryption Process: Plans to implement decryption functionality.
 
-Upcoming Features:
-Encryption Algorithms: Implementation of file encryption algorithms (currently under development).
+-Error Handling: Adding error handling for better user experience.
 
-Decryption Process: Plans to implement decryption functionality.
-
-Error Handling: Adding error handling for better user experience.
-
-Cross-Platform Support: Expanding the app to support other platforms beyond Windows.
+-Cross-Platform Support: Expanding the app to support other platforms beyond Windows.
 ---
 
 ## **Overview**

@@ -125,7 +125,7 @@ On Windows, download OpenSSL from [here](https://slproweb.com/products/Win32Open
 
 ## **How It Works**
 
-- **Encryption**: RansomLocker uses custom hand-rolled encryption algorithms to lock files, making them inaccessible without the correct decryption key.
+- **Encryption**: RansomLocker uses custom hand-rolled implementations of AES, RC4, DES, Blowfish, and RC5 to lock files, making them inaccessible without the correct decryption key.
 - **Ransomware Simulation**: After a file is encrypted, the application displays a "ransom note" prompting the user to enter the decryption key (simulating a ransomware attack).
 - **Decryption**: The encrypted file can only be restored by entering the correct key, which the user receives during encryption.
 

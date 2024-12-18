@@ -1,8 +1,35 @@
-Thanks for the clarification! Here's an updated version of the README that includes your specific choices of **GPL-3.0 license**, **wxWidgets** for the GUI, and **hand-rolled encryption**:
+# **RansomLocker**
+
+---
+# **In Progress**
+
+This project is a work in progress. Currently, the following features have been implemented:
+
+-GUI Setup: Basic graphical user interface (GUI) with functional buttons.
+
+-Theme Switching: Ability to change the application's theme (light/dark mode).
+
+-File Picker: File picker functionality for selecting files to be encrypted.
+
+-Progress Bar: Progress bar to show the status of operations (like encryption or decryption).
+
+![RansomLocker GUI](docs/images/guiScreenshotDarkTheme.png)
 
 ---
 
-# **RansomLocker**
+![RansomLocker GUI](docs/images/guiScreenshotLightTheme.png)
+
+---
+# **Upcoming Features**:
+-Encryption Algorithms: Implementation of file encryption algorithms (currently under development).
+
+-Decryption Process: Plans to implement decryption functionality.
+
+-Error Handling: Adding error handling for better user experience.
+
+-Cross-Platform Support: Expanding the app to support other platforms beyond Windows.
+
+---
 
 ## **Overview**
 
@@ -17,13 +44,13 @@ Thanks for the clarification! Here's an updated version of the README that inclu
 - **Simulated Ransomware Behavior**: Encrypt files, lock them, and simulate ransomware by requiring a decryption key.
 - **Cross-Platform**: Compatible with both Windows and Linux.
 - **Secure File Management**: Organize and manage encrypted files.
+---
 
 ## **Prerequisites**
 
 - C++11 or later.
 - CMake for building the project.
 - **wxWidgets** for the GUI.
-- **OpenSSL** or other libraries (if used) for encryption support.
 
 ### Install wxWidgets (on Linux)
 
@@ -36,16 +63,6 @@ sudo apt-get install libwxgtk3.0-gtk3-dev
 ### Install wxWidgets (on Windows)
 
 Follow the instructions to install wxWidgets on Windows from the [official wxWidgets website](https://www.wxwidgets.org/downloads/).
-
-### Install OpenSSL (if using for encryption)
-
-For Ubuntu/Debian-based systems:
-
-```bash
-sudo apt-get install libssl-dev
-```
-
-On Windows, download OpenSSL from [here](https://slproweb.com/products/Win32OpenSSL.html).
 
 ## **Installation**
 
@@ -65,9 +82,9 @@ On Windows, download OpenSSL from [here](https://slproweb.com/products/Win32Open
 
    - On Ubuntu:
      ```bash
-     sudo apt-get install libssl-dev libwxgtk3.0-gtk3-dev
+     sudo apt-get install libwxgtk3.0-gtk3-dev
      ```
-   - On Windows, ensure wxWidgets and OpenSSL (or other libraries you’re using for encryption) are installed.
+   - On Windows, ensure wxWidgets is installed.
 
 4. **Build the project**:
 
@@ -77,6 +94,8 @@ On Windows, download OpenSSL from [here](https://slproweb.com/products/Win32Open
    ```
 
    This will compile the project and generate the executable.
+
+---
 
 ## **Usage**
 
@@ -98,7 +117,7 @@ On Windows, download OpenSSL from [here](https://slproweb.com/products/Win32Open
 
 ## **How It Works**
 
-- **Encryption**: RansomLocker uses custom hand-rolled encryption algorithms to lock files, making them inaccessible without the correct decryption key.
+- **Encryption**: RansomLocker uses custom hand-rolled implementations of AES, RC4, DES, Blowfish, and RC5 to lock files, making them inaccessible without the correct decryption key.
 - **Ransomware Simulation**: After a file is encrypted, the application displays a "ransom note" prompting the user to enter the decryption key (simulating a ransomware attack).
 - **Decryption**: The encrypted file can only be restored by entering the correct key, which the user receives during encryption.
 

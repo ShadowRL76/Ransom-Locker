@@ -126,7 +126,7 @@ This project is licensed under the **GPL-3.0 License**. See the [LICENSE](LICENS
 
 ## **LICENSE**
 
-For the **GPL-3.0 License**, include the following text in the `LICENSE` file:
+For the **GPL-3.0 License**, include the following text in the `LICENSE.txt` file:
 
 ```
 GNU GENERAL PUBLIC LICENSE

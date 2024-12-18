@@ -32,7 +32,6 @@ AppFrame::AppFrame() :
     button3(new wxButton(this, wxID_ANY, "DES Encryption")),
     button4(new wxButton(this, wxID_ANY, "Blowfish Encryption")),
     toggleThemeButton(new wxToggleButton(this, wxID_ANY, "")),
-    selectFileButton(new wxButton(this, ID_FileSelector, "Select File")), 
     selectEncryptiontitle(new wxStaticText(this, wxID_ANY, "Select Encryption Method", wxPoint(270, 40), wxSize(NULL, NULL))),
     progressBarTitle(new wxStaticText(this, wxID_ANY, "Encryption Progress 50%", wxPoint(300, 210), wxSize(NULL, NULL))),
     progressBar(new wxGauge(this, wxID_ANY, 100, wxPoint(165, 150), wxSize(400, 25), wxGA_HORIZONTAL, wxDefaultValidator, "Progress"))
@@ -64,14 +63,13 @@ AppFrame::AppFrame() :
     }
 
     toggleThemeButton->SetBackgroundColour("#00CB7A"); 
-    selectFileButton->SetBackgroundColour("#ED2A25");
-    selectFileButton->SetPosition(wxPoint(300, 230)); 
 
 
-    sizer->Add(button1, 0, wxALL, 20);  
-    sizer->Add(button2, 0, wxALL, 20);
-    sizer->Add(button3, 0, wxALL, 20);
-    sizer->Add(button4, 0, wxALL, 20);
+    for(auto* button : buttons)
+	{
+		sizer->Add(button, 0, wxALL, 20); 
+	}
+
     sizer->Add(toggleThemeButton, 0, wxALL, 20); 
 
 
@@ -82,23 +80,27 @@ AppFrame::AppFrame() :
 
 
     toggleThemeButton->Bind(wxEVT_COMMAND_TOGGLEBUTTON_CLICKED, &AppFrame::OnToggle, this);
-    selectFileButton->Bind(wxEVT_BUTTON, &AppFrame::FileSelector, this, ID_FileSelector);
 
+    for (auto* menuFile : { menuFile})
+    {
+        menuFile->Append(ID_Hello, "& Hello...\tCtrl + H", "Help string shown in status bar for this menu item"); 
+        menuFile->AppendSeparator(); 
+        menuFile->Append(ID_FileSelector, "&Select File...\tCtrl + S", "Select a file to encrypt");
+        menuFile->AppendSeparator(); 
+        menuFile->Append(wxID_EXIT); 
+    }
 
-
-    menuFile->Append(ID_Hello, "& Hello...\tCtrl + H", "Help string shown in status bar for this menu item");
-    menuFile->AppendSeparator();
-    menuFile->Append(wxID_EXIT); 
-    menuHelp->Append(wxID_ABOUT); 
-
+    menuHelp->Append(wxID_ABOUT);
     menuBar->Append(menuFile, "&File"); 
     menuBar->Append(menuHelp, "&Help"); 
+    
 
     SetMenuBar(menuBar);
 
     Bind(wxEVT_MENU, [=](wxCommandEvent&) { wxLogMessage("Hello from a lambda!"); }, ID_Hello); 
     Bind(wxEVT_MENU, &AppFrame::onAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, [=](wxCommandEvent&) { Close(true); }, wxID_EXIT);
+    Bind(wxEVT_MENU, &AppFrame::FileSelector, this, ID_FileSelector); 
     
 }
 

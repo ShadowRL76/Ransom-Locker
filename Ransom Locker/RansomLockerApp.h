@@ -23,15 +23,17 @@ private:
     wxButton* button2;
     wxButton* button3;
     wxButton* button4;
-    wxStaticText* selectEncryptiontitle;
+    wxStaticText* selectEncryptionTitle;
     wxStaticText* progressBarTitle;
-    std::vector<wxButton*> buttons = { button1, button2, button3, button4 }; 
+    std::vector<wxButton*> buttons;
     wxGauge* progressBar;
     wxToggleButton* toggleThemeButton;
     Logger logger;
 
 
 private:
+    void SetupUI(); 
+    void BindEvents(); 
     void onAbout(wxCommandEvent& event);
     void OnButtonHover(wxMouseEvent& event);
     void OnButtonLeave(wxMouseEvent& event);

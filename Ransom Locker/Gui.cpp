@@ -32,40 +32,40 @@ AppFrame::AppFrame() :
     button3(new wxButton(this, wxID_ANY, "DES Encryption")),
     button4(new wxButton(this, wxID_ANY, "Blowfish Encryption")),
     toggleThemeButton(new wxToggleButton(this, wxID_ANY, "")),
-    selectEncryptiontitle(new wxStaticText(this, wxID_ANY, "Select Encryption Method", wxPoint(270, 40), wxSize(NULL, NULL))),
+    selectEncryptionTitle(new wxStaticText(this, wxID_ANY, "Select Encryption Method", wxPoint(270, 40), wxSize(NULL, NULL))),
     progressBarTitle(new wxStaticText(this, wxID_ANY, "Encryption Progress 50%", wxPoint(300, 210), wxSize(NULL, NULL))),
     progressBar(new wxGauge(this, wxID_ANY, 100, wxPoint(165, 150), wxSize(400, 25), wxGA_HORIZONTAL, wxDefaultValidator, "Progress"))
 
 {
     buttons = { button1, button2, button3, button4 }; 
 
+    SetupUI(); 
+    BindEvents(); 
+}
 
+void AppFrame::SetupUI()
+{
+    wxBoxSizer* sizer = new wxBoxSizer(wxHORIZONTAL); 
+    wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
     wxFont headerFont(wxFontInfo(14).Bold());
     wxFont headerThreeFont(wxFontInfo(10).Bold());
-    selectEncryptiontitle->SetForegroundColour("white");
-    selectEncryptiontitle->SetFont(headerFont);
+    
+    selectEncryptionTitle->SetForegroundColour("white");
+    selectEncryptionTitle->SetFont(headerFont);
+
     progressBarTitle->SetForegroundColour("white");
-    progressBarTitle->SetFont(headerThreeFont); 
+    progressBarTitle->SetFont(headerThreeFont);  
 
     progressBar->SetBackgroundColour("#FDEDEC");
     progressBar->SetValue(50);
 
-
-    wxBoxSizer* sizer = new wxBoxSizer(wxHORIZONTAL);
-    wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
-   
-
     for (auto* button : buttons) 
     {
-        button->Bind(wxEVT_ENTER_WINDOW, &AppFrame::OnButtonHover, this); 
-        button->Bind(wxEVT_LEAVE_WINDOW, &AppFrame::OnButtonLeave, this); 
-
         button->SetForegroundColour("#FDEDEC"); 
         button->SetBackgroundColour("#ED2A25"); 
     }
 
     toggleThemeButton->SetBackgroundColour("#00CB7A"); 
-
 
     for(auto* button : buttons)
 	{
@@ -73,17 +73,13 @@ AppFrame::AppFrame() :
 	}
 
     sizer->Add(toggleThemeButton, 0, wxALL, 20); 
-
-
     mainSizer->Add(0, 70, 0, wxEXPAND); 
     mainSizer->Add(sizer, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 0);   
     mainSizer->AddStretchSpacer();
+
     this->SetSizer(mainSizer); 
 
-
-    toggleThemeButton->Bind(wxEVT_COMMAND_TOGGLEBUTTON_CLICKED, &AppFrame::OnToggle, this);
-
-    for (auto* menuFile : { menuFile})
+    for (auto* menuFile : { menuFile })
     {
         menuFile->Append(ID_Hello, "& Hello...\tCtrl + H", "Help string shown in status bar for this menu item"); 
         menuFile->AppendSeparator(); 
@@ -95,18 +91,29 @@ AppFrame::AppFrame() :
     menuHelp->Append(wxID_ABOUT);
     menuBar->Append(menuFile, "&File"); 
     menuBar->Append(menuHelp, "&Help"); 
-    
 
     SetMenuBar(menuBar);
 
-    Bind(wxEVT_MENU, [=](wxCommandEvent&) { wxLogMessage("Hello from a lambda!"); }, ID_Hello); 
-    Bind(wxEVT_MENU, &AppFrame::onAbout, this, wxID_ABOUT);
-    Bind(wxEVT_MENU, [=](wxCommandEvent&) { Close(true); }, wxID_EXIT);
-    Bind(wxEVT_MENU, &AppFrame::FileSelector, this, ID_FileSelector); 
-    
 }
 
 
+void AppFrame::BindEvents()
+{
+    for (auto* button : buttons)
+    {
+        button->Bind(wxEVT_ENTER_WINDOW, &AppFrame::OnButtonHover, this); 
+        button->Bind(wxEVT_LEAVE_WINDOW, &AppFrame::OnButtonLeave, this);
+    }
+
+    toggleThemeButton->Bind(wxEVT_COMMAND_TOGGLEBUTTON_CLICKED, &AppFrame::OnToggle, this); 
+
+
+    Bind(wxEVT_MENU, [=](wxCommandEvent&) { wxLogMessage("Hello from a lambda!"); }, ID_Hello);
+    Bind(wxEVT_MENU, &AppFrame::onAbout, this, wxID_ABOUT);
+    Bind(wxEVT_MENU, [=](wxCommandEvent&) { Close(true); }, wxID_EXIT);
+    Bind(wxEVT_MENU, &AppFrame::FileSelector, this, ID_FileSelector);
+
+}
 
 void AppFrame::onAbout(wxCommandEvent& event)
 {
@@ -151,17 +158,16 @@ void AppFrame::OnToggle(wxCommandEvent& event)
     {
         SetBackgroundColour(darkTheme);
         toggleThemeButton->SetBackgroundColour("#00CB7A");
-        selectEncryptiontitle->SetForegroundColour("bold");
-        selectEncryptiontitle->SetForegroundColour("white");
+        selectEncryptionTitle->SetForegroundColour("bold");
+        selectEncryptionTitle->SetForegroundColour("white");
         progressBarTitle->SetForegroundColour("bold");
-        progressBarTitle->SetForegroundColour("white");
+        progressBarTitle->SetForegroundColour("white"); 
     }
     else 
     {
-        
         SetBackgroundColour(lightTheme);
         toggleThemeButton->SetBackgroundColour("#F03B4A");
-        selectEncryptiontitle->SetForegroundColour("bold"); 
+        selectEncryptionTitle->SetForegroundColour("bold");
         progressBarTitle->SetForegroundColour("bold"); 
     }
     Refresh(); 
